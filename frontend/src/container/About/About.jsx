@@ -15,7 +15,6 @@ const About = () => {
   return (
     <>
       <h2 className="text-4xl font-bold my-8 text-center lg:text-left head-text">
-      <>{console.log(import.meta.env.VITE_APP_SANITY_PROJECT_ID,)}</>
         <span className="text-blue-600">About </span>Living <span className="text-blue-600">Seed</span> Academy
       </h2>
 

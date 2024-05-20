@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 
 import { AppWrap, MotionWrap } from '../../wrapper';

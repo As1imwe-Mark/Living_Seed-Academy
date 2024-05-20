@@ -1,0 +1,55 @@
+.app__about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+  .app__about-image,
+  .app__about-info {
+    flex: 1;
+    margin: 20px;
+  }
+
+  .app__about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .app__about-info {
+    .p-text {
+      max-height: 100px;
+      overflow: hidden;
+      transition: max-height 0.5s ease-in-out;
+
+      &.expanded {
+        max-height: 1000px; 
+      }
+    }
+
+    .read-more-btn {
+      display: none;
+      background-color: #ff6347;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .app__about-info {
+      .p-text {
+        max-height: none;
+      }
+
+      .read-more-btn {
+        display: inline-block;
+      }
+    }
+  }
+}

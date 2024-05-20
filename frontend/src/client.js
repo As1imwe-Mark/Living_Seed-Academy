@@ -2,9 +2,10 @@ import sanityClient from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 
 const client = sanityClient({
-  projectId: '4g6nda3q',
+  projectId: import.meta.env.VITE_APP_SANITY_PROJECT_ID,
   dataset: 'production', 
-  token: 'sksvdwTx6R4GV2hbBUI2Zms3sPQ16eRFYHbWXGG4oi2vjkqaXAHpVJilJu9DP7ZYauJSrEBcRLP5VYFojJVZHRbRblRbSQR9uZxByAe2WNcemNqx07J2vY4DGgXgL0ZjQLhSpDg9jhfANRfiQEC6km0GPZhM8uDkMHFNBWjxO9cChcWRnY3G',
+  token: import.meta.env.VITE_APP_SANITY_TOKEN,
+  apiVersion: '2023-01-08',
   useCdn: true,
 });
 

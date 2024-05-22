@@ -33,6 +33,7 @@ export default {
   Badge,
   pic5,
   pic7,
+  mobile,
   email, 
   profile,
   logo,

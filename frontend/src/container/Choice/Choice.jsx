@@ -1,4 +1,5 @@
 import images from '../../constants/images'
+import { AppWrap, MotionWrap } from '../../wrapper'
 
 const Choice = () => {
   const Reasons = [
@@ -50,4 +51,8 @@ const Choice = () => {
   )
 }
 
-export default Choice
+export default AppWrap(
+  MotionWrap(Choice),
+  'choice',
+  'app__whitebg',
+);

@@ -60,7 +60,7 @@ const Header = () => {
             </div>
               </div>
 
-              <p className="md:text-2xl font-semibold text-center mt-1 mb-6 md:max-w-[60%] text-pink-300"> <TypeAnimation
+              <p className="md:text-3xl font-semibold text-center mt-1 mb-6 md:max-w-[60%] text-pink-300"> <TypeAnimation
                 sequence={[texts[textIndex], 7000]}
                 wrapper="span"
                 cursor={true}

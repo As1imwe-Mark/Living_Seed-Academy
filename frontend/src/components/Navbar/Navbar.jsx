@@ -8,14 +8,14 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="app__navbar none">
+    <nav className="app__navbar md:bg-transparent md:border-none text-pink-600">
      <div className="flex items-center">
-        <img src={images.badge} alt='badge' className="h-12 mr-2" />
-        <h3 className="p-text hidden md:block font-bold">Living Seed Academy</h3>
+        <img src={images.Badge} alt='badge' className="h-12 mr-2" />
+        <h3 className="p-text font-bold">Living Seed Academy</h3>
       </div>
       <ul className="app__navbar-links">
         {['home', 'about', 'gallery', 'staff','news','fees','calender', 'testimonial', 'contact'].map((item) => (
-          <li className="app__flex p-text" key={`link-${item}`}>
+          <li className="app__flex font-semibold" key={`link-${item}`}>
             <div />
             <a href={`#${item}`}>{item}</a>
           </li>

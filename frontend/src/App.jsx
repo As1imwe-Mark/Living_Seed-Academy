@@ -5,7 +5,7 @@ import Staff from './components/Staff/Staff';
 import Calender from './components/Carlender/Carlender'
 import News from './components/News/News';
 import './App.scss';
-import SchoolFees from './components/Fees/fees';
+import Academics from './components/Academics/Academics';
 
 const App = () => (
   <div className="overflow-clip">
@@ -16,7 +16,7 @@ const App = () => (
     <Staff />
     <Calender />
     <News />
-    <SchoolFees />
+    <Academics />
     <Testimonial />
     <Footer />
   </div>

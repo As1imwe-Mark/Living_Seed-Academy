@@ -17,7 +17,7 @@ import redux from '../assets/redux.png';
 import sass from '../assets/sass.png';
 import typescript from '../assets/typescript.png';
 import vue from '../assets/vue.png';
-import badge from '../assets/badge.png'
+import Badge from '../assets/Badge (2).png'
 
 import about01 from '../assets/about01.png';
 import about02 from '../assets/about02.png';
@@ -56,7 +56,7 @@ export default {
   pic11,
   pic13,
   pic4,
-  badge,
+  Badge,
   pic5,
   pic7,
   email,

@@ -51,7 +51,7 @@ const Header = () => {
       </AnimatePresence>
 
       <div className="flex relative  z-2 flex-col items-center justify-center text-center">
-      <div className="flex items-center gap-3 justify-center">
+      <div className="flex items-center gap-1 justify-center">
         <div className="md:w-56 w-24 shadow-md">
         <img src={images.Badge} alt='School badge' className="w-full object-cover inline-block" />
          </div>

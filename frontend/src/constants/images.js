@@ -13,7 +13,6 @@ import pic5 from '../assets/pic5.jpg'
 import pic7 from '../assets/pic7.jpg'
 import pic10 from '../assets/pic10.jpg'
 import pic13 from '../assets/pic13.jpg'
-import pic6 from '../assets/pic6.jpg'
 import pic11 from '../assets/pic11.jpg'
 
 
@@ -26,7 +25,6 @@ export default {
   career,
   teachers,
   community,
-  pic6,
   pic11,
   pic13,
   pic4,

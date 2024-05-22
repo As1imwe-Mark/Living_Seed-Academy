@@ -5,7 +5,7 @@ import images from '../../constants/images';
 import './Header.scss';
 
 const Bg = [
-  images.pic10, images.pic13, images.pic4, images.pic5, images.pic7,images.pic11,images.pic6
+  images.pic10, images.pic13, images.pic4, images.pic5, images.pic7,images.pic11
 ];
 
 const texts = [

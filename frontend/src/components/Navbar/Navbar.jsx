@@ -14,7 +14,7 @@ const Navbar = () => {
         <h3 className="p-text font-bold">Living Seed Academy</h3>
       </div>
       <ul className="app__navbar-links">
-        {['home', 'about', 'gallery', 'staff','news','fees','calender', 'testimonial', 'contact'].map((item) => (
+        {['home', 'about','academics','staff', 'gallery','news', 'testimonial', 'contact'].map((item) => (
           <li className="app__flex font-semibold" key={`link-${item}`}>
             <div />
             <a href={`#${item}`}>{item}</a>
@@ -36,7 +36,7 @@ const Navbar = () => {
             >
               <HiX onClick={() => setToggle(false)} />
               <ul>
-                {['home', 'about', 'gallery', 'staff','news','fees','calender','testimonial', 'contact'].map((item) => (
+                {['home', 'about','academics','staff', 'gallery','news', 'testimonial', 'contact'].map((item) => (
                   <li key={item}>
                     <a href={`#${item}`} onClick={() => setToggle(false)}>
                       {item}

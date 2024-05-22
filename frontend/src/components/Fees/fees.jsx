@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import client from '../../client';
-import { AppWrap, MotionWrap } from '../../wrapper';
 
 const SchoolFees = () => {
   const [fees, setFees] = useState([]);
@@ -22,7 +21,7 @@ const SchoolFees = () => {
   };
 
   return (
-    <div className="container mx-auto p-6 min-h-screen">
+    <div className="container mx-auto p-6 mt-12">
       <h2 className="text-4xl font-bold mb-6 text-center head-text">Our<span> Fees</span> Structure</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
         {fees.slice(0, displayedFees).map((fee, index) => (
@@ -54,8 +53,4 @@ const SchoolFees = () => {
   );
 };
 
-export default AppWrap(
-  MotionWrap(SchoolFees, 'app__testimonial'),
-  'fees',
-  'app__whitebg',
-);
+export default SchoolFees;

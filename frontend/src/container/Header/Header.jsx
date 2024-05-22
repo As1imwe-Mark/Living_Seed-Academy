@@ -29,7 +29,7 @@ const Header = () => {
     const interval = setInterval(() => {
       setBgIndex(prevIndex => (prevIndex + 1) % Bg.length);
       setTextIndex(prevIndex => (prevIndex + 1) % texts.length);
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -44,7 +44,7 @@ const Header = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1}}
+          transition={{ duration: 0.01}}
         >
           <div className="absolute inset-0 bg-black opacity-75"></div>
         </motion.div>
@@ -56,7 +56,9 @@ const Header = () => {
         <img src={images.Badge} alt='School badge' className="w-full object-cover inline-block" />
          </div>
           <div>
-            <h1 className="md:text-7xl font-bold text-slate-400 text-xl">LIVING <span className='text-pink-400'> SEED </span>ACADEMY</h1>
+            <motion.h1 
+            animate={{ y: [0, -10, 0], transition: { duration: 1, repeat: Infinity } }}
+            className="md:text-7xl font-extrabold text-white text-xl">LIVING <span className='text-pink-400'> SEED </span>ACADEMY</motion.h1>
             </div>
               </div>
 
@@ -73,44 +75,7 @@ const Header = () => {
                 <a href='#contact' className="px-5 font-semibold py-2 hover:text-white bg-blue-700 hover:bg-blue-500 text-slate-300 rounded-xl">Contact Us</a>
               </div>
               </div>
-      <div className="relative z-1 flex-col md:flex-row justify-between hidden items-center text-white p-4 md:w-1/2 max-h-[70%]">
-      
-        <motion.div
-          className="mb-8 md:mb-0 md:flex-1 flex flex-col items-start my-auto p-4 bg-gray-800 bg-opacity-50 rounded-lg"
-        >
-          <div className="flex items-center mb-4">
-            <motion.span 
-              className="text-5xl md:text-6xl"
-              animate={{ rotate: [0, 15, 0], transition: { duration: 1, repeat: Infinity } }}
-            >
-              👋
-            </motion.span>
-            <div className="ml-4">
-              <p className="text-base md:text-lg">
-                <span className="animate-typing">Hello, there</span> 
-              </p>
-              <motion.h1 
-                className="text-2xl md:text-3xl font-bold"
-                animate={{ y: [0, -10, 0], transition: { duration: 1, repeat: Infinity } }}
-              >
-                How are you?
-              </motion.h1>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-start p-4 bg-gray-800 bg-opacity-75 rounded-lg">
-            <p className="text-lg text-pink-400 m font-semibold md:text-xl">
-              <TypeAnimation
-                sequence={[texts[textIndex], 7000]}
-                wrapper="span"
-                cursor={true}
-                repeat={Infinity}
-                style={{ display: 'inline-block' }}
-              />
-            </p>
-          </div>
-        </motion.div>
-      </div>
+     
     </div>
   );
 };

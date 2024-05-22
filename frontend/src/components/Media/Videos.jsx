@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import client from '../../client';
@@ -80,7 +80,7 @@ const Videos = () => {
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -100 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
         className="w-full flex flex-col items-center m-4 cursor-pointer rounded-lg shadow-lg overflow-hidden max-h-[400px]"
       >
         <video

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { MdClose } from 'react-icons/md';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import client, { urlFor } from '../../client';
+import EventCalender from '../Carlender/Carlender'
 
 const News = () => {
   const [news, setNews] = useState([]);
@@ -25,18 +25,21 @@ const News = () => {
     document.body.style.overflowY = 'auto';
   };
 
-  const displayedNews = showAll ? news : news.slice(0, 3);
+  const displayedNews = showAll ? news : news.slice(0, 4);
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="font-bold head-text mb-4">Latest <span>News</span> At <span>School</span></h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto">
+     <h1 className="head-text mb-5"><span>News </span> And <span>Events</span></h1>
+
+     <div className="mb-16">
+     <h1 className="head-text mb-5">Latest <span>News</span></h1>
+     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mx-auto">
         {displayedNews.map((article) => (
           <div key={article._id} className="shadow-md rounded-lg overflow-hidden bg-slate-100 flex flex-col">
             <img
               src={urlFor(article.image.asset).url()}
               alt={article.title}
-              className="w-full h-48 object-cover md:h-64"
+              className="w-full h-48 object-cover md:h-44 border-black"
             />
             <div className="p-4 flex-grow">
               <h2 className="text-xl font-semibold mb-2">{article.title}</h2>
@@ -69,7 +72,7 @@ const News = () => {
           exit={{ opacity: 0 }}
           onClick={closeModal}
         >
-          <div className="bg-white p-4 rounded-lg max-w-[60%] max-h-[70%] overflow-y-auto relative">
+          <div className="bg-white p-4 rounded-lg w-[80%] max-h-[70%] overflow-y-auto relative">
             {/* <button className="absolute bottom-10 top-2 right-1 text-xl" onClick={closeModal}>
               <MdClose />
             </button> */}
@@ -78,6 +81,13 @@ const News = () => {
           </div>
         </motion.div>
       )}
+     </div>
+
+      
+
+      <div>
+        <EventCalender />
+      </div>
     </div>
   );
 };
@@ -85,5 +95,5 @@ const News = () => {
 export default AppWrap(
   MotionWrap(News, 'app__testimonial'),
   'news',
-  'app__whitebg',
+  'app__primarybg',
 );

@@ -25,7 +25,7 @@ const Staff = () => {
       if (!isPaused) {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % staffData.length);
       }
-    }, 3000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [isPaused, staffData.length]);
 

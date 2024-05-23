@@ -29,7 +29,7 @@ const Header = () => {
     const interval = setInterval(() => {
       setBgIndex(prevIndex => (prevIndex + 1) % Bg.length);
       setTextIndex(prevIndex => (prevIndex + 1) % texts.length);
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);

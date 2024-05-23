@@ -11,7 +11,7 @@ const Choice = () => {
     {
       icon: images.education,
       title: 'Academic Excellence',
-      reason: `Highlighting the school's commitment to providing top-notch education, rigorous curriculum, distinguished staff, and academic achievements can attract students seeking a challenging learning environment.`
+      reason: `Highlighting the school's commitment to providing top-notch education, rigorous curriculum, distinguished staff, and academic achievements can attract pupils seeking a challenging learning environment.`
     },
     {
       icon:images.community,

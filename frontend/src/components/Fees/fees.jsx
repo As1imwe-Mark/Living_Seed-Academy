@@ -5,6 +5,7 @@ import client from '../../client';
 const SchoolFees = () => {
   const [fees, setFees] = useState([]);
   const [displayedFees, setDisplayedFees] = useState(3); // Initially display 3 fees
+  const [showAllFees, setShowAllFees] = useState(false); // State to toggle between show more and show less
 
   useEffect(() => {
     const fetchFees = async () => {
@@ -17,7 +18,12 @@ const SchoolFees = () => {
   }, []);
 
   const handleShowMore = () => {
-    setDisplayedFees(displayedFees + 1);
+    setShowAllFees(!showAllFees); // Toggle the state
+    if (showAllFees) {
+      setDisplayedFees(3); // Show only 3 fees when toggling to show less
+    } else {
+      setDisplayedFees(fees.length); // Show all fees when toggling to show more
+    }
   };
 
   return (
@@ -42,13 +48,11 @@ const SchoolFees = () => {
           </motion.div>
         ))}
       </div>
-      {fees.length > displayedFees && (
-        <div className="text-center mt-4">
-          <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={handleShowMore}>
-            Show More
-          </button>
-        </div>
-      )}
+      <div className="text-center mt-4">
+        <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={handleShowMore}>
+          {showAllFees ? "Show Less" : "Show More"}
+        </button>
+      </div>
     </div>
   );
 };

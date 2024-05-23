@@ -33,10 +33,10 @@ const PupilCards = () => {
           <div>
             <h2 className="text-2xl font-bold mb-8 p-text">Overview of Curriculum</h2>
             <p className="text-lg p-text">
-              Our curriculum is designed to provide students with a well-rounded education,
+              Our curriculum is designed to provide pupils with a well-rounded education,
               focusing on both academic excellence and personal development. Key subjects
               include Mathematics, Science, Language Arts, Social Studies, and Physical Education.
-              Additionally, students have access to a variety of extracurricular activities such
+              Additionally, pupils have access to a variety of extracurricular activities such
               as music, art, sports, and community service projects.
             </p>
             <SchoolSchedule />

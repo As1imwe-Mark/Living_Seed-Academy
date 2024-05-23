@@ -23,7 +23,7 @@ const ResultsTable = () => {
     <div className="flex flex-col items-center p-4">
       <h1 className="text-3xl font-bold mb-4 p-text">Primary Leaving Examinations Results <span>{rowData.Year}</span></h1>
       <p className="text-lg mb-6 text-center p-text">
-        We are thrilled to share the outstanding achievements of our students in the Primary Leaving Examinations. Their hard work, dedication, and the unwavering support from our dedicated teachers and parents have culminated in remarkable results that reflect our commitment to academic excellence. Below is a detailed breakdown of our students' performance, showcasing their success across various divisions.
+        We are thrilled to share the outstanding achievements of our pupils in the Primary Leaving Examinations. Their hard work, dedication, and the unwavering support from our dedicated teachers and parents have culminated in remarkable results that reflect our commitment to academic excellence. Below is a detailed breakdown of our pupils' performance, showcasing their success across various divisions.
       </p>
       <div className="overflow-x-auto w-full shadow-lg">
         <table className="table-auto min-w-full border-collapse border border-gray-300 p-text">

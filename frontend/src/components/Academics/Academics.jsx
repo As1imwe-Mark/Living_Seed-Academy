@@ -4,6 +4,9 @@ import Results from './Results';
 import { motion } from 'framer-motion';
 import {AppWrap, MotionWrap} from '../../wrapper'
 import SchoolFees from '../Fees/fees'
+import SchoolSchedule from '../ResourcesAndSchedule/Schedule';
+import Resources from '../ResourcesAndSchedule/Resources';
+
 
 const PupilCards = () => {
   const [pupils, setPupils] = useState([]);
@@ -25,25 +28,27 @@ const PupilCards = () => {
   return (
     <div className="container mx-auto p-4">
       <div className="flex flex-col items-center mb-8">
-        <h1 className="head-text mb-4">Academics</h1>
+        <h1 className="head-text mb-4 text-6xl">Academics</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full mb-8">
           <div>
-            <h2 className="text-2xl font-bold mb-4">Overview of Curriculum</h2>
-            <p className="text-gray-800">
+            <h2 className="text-2xl font-bold mb-8 p-text">Overview of Curriculum</h2>
+            <p className="text-lg p-text">
               Our curriculum is designed to provide students with a well-rounded education,
               focusing on both academic excellence and personal development. Key subjects
               include Mathematics, Science, Language Arts, Social Studies, and Physical Education.
               Additionally, students have access to a variety of extracurricular activities such
               as music, art, sports, and community service projects.
             </p>
+            <SchoolSchedule />
           </div>
           <div>
+          <Resources />
             <Results />
           </div>
         </div>
       </div>
       <div>
-      <h2 className="text-center text-2xl font-bold mb-7">Top Performers</h2>
+      <h2 className="text-center text-2xl font-bold mb-7 p-text">Top Performers</h2>
       <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
       >

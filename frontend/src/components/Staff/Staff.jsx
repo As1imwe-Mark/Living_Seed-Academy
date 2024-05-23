@@ -4,7 +4,7 @@ import { BsTwitter, BsInstagram } from 'react-icons/bs';
 import { FaFacebookF } from 'react-icons/fa';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import { AppWrap, MotionWrap } from '../../wrapper';
-import client,{urlFor} from '../../client';
+import client, { urlFor } from '../../client';
 
 const Staff = () => {
   const [staffData, setStaffData] = useState([]);
@@ -13,21 +13,25 @@ const Staff = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const query = '*[_type == "staff"]';
-      const data = await client.fetch(query);
-      setStaffData(data);
+      try {
+        const query = '*[_type == "staff"]';
+        const data = await client.fetch(query);
+        setStaffData(data);
+      } catch (error) {
+        console.error('Error fetching staff data:', error);
+      }
     };
     fetchData();
   }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!isPaused) {
+      if (!isPaused && staffData.length > 0) {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % staffData.length);
       }
     }, 5000);
     return () => clearInterval(interval);
-  }, [isPaused, staffData.length]);
+  }, [isPaused, staffData]);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? staffData.length - 1 : prevIndex - 1));
@@ -45,6 +49,8 @@ const Staff = () => {
     setIsPaused(false);
   };
 
+  const currentStaff = staffData[currentIndex] || {}; // Ensure currentStaff is an object
+
   return (
     <div className="bg-white">
       <h2 className="head-text">
@@ -58,21 +64,20 @@ const Staff = () => {
       >
         {staffData.length > 0 && (
           <motion.div
-            key={currentIndex}
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 1 }}
             className="w-[320px] md:w-[450px] shadow-xl mx-4 text-center"
           >
-            <img src={urlFor(staffData[currentIndex].imgUrl).url()} alt="staff" className="w-full h-auto" />
+            <img src={currentStaff.imgUrl && urlFor(currentStaff.imgUrl).url()} alt="staff" className="w-full h-auto" />
             <div className="p-4 justify-center">
-              <h2 className="bold-text text-center" style={{ marginTop: 10 }}>{staffData[currentIndex].name}</h2>
-              <p className="p-text" style={{ marginTop: 10 }}>{staffData[currentIndex].position}</p>
-              <p className="p-text" style={{ marginTop: 10 }}>{staffData[currentIndex].contact}</p>
+              <h2 className="bold-text text-center" style={{ marginTop: 10 }}>{currentStaff.name}</h2>
+              <p className="p-text" style={{ marginTop: 10 }}>{currentStaff.position}</p>
+              <p className="p-text" style={{ marginTop: 10 }}>{currentStaff.contact}</p>
             </div>
             <div className="flex space-x-5 mb-2 pl-4">
-              {staffData[currentIndex].socialMedia.map((social, index) => {
+              {currentStaff.socialMedia && currentStaff.socialMedia.map((social, index) => {
                 const Icon = social.platform === 'twitter' ? BsTwitter : social.platform === 'facebook' ? FaFacebookF : BsInstagram;
                 return (
                   <a key={index} href={social.url} target="_blank" rel="noopener noreferrer">
